@@ -1,0 +1,43 @@
+.wrapper {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.inner {
+  text-align: center;
+  width: 60%;
+}
+
+.inner h1 {
+  font-size: 70px;
+  font-weight: bold;
+  color: #25274d;
+  text-decoration: underline;
+}
+.inner h2 {
+  font-size: 70px;
+}
+
+.inner p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #62a7c5;
+}
+
+.inner button {
+  width: 250px;
+  height: 64px;
+  border-radius: 10px;
+  background-color: #25274d;
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  margin: 1em 0;
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
