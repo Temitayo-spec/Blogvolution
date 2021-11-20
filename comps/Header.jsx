@@ -1,4 +1,7 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable arrow-body-style */
 /* eslint-disable quotes */
 import { useState } from "react";
@@ -10,10 +13,13 @@ import {
   setSignedIn,
   setUserData,
   setInput,
+  setSection,
+  selectSection,
 } from "../store/userSlice";
 import styles from "../styles/header.module.css";
 
 const Header = () => {
+  const section = useSelector(selectSection);
   const [inputValue, setInputValue] = useState("tech");
   const userData = useSelector(selectUserData);
   const isSignedIn = useSelector(selectSignedIn);
@@ -47,13 +53,12 @@ const Header = () => {
         {isSignedIn ? (
           <>
             <div className={styles.nav_user_data}>
-              <img src={userData?.imageUrl} alt={userData?.name} />
-              <h1 className={styles.signed_in}>
-                Hi
-                {' '}
-                {userData?.givenName}
-                !
-              </h1>
+              <img
+                onClick={() => dispatch(setSection(!section))}
+                src={userData?.imageUrl}
+                alt={userData?.name}
+              />
+              <h1 className={styles.signed_in}>Hi {userData?.givenName}!</h1>
               <GoogleLogout
                 clientId="144910150365-aepqpbughmnki4q43rnpe6ph5l9eh1qc.apps.googleusercontent.com"
                 render={(renderProps) => (
